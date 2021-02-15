@@ -1,0 +1,20 @@
+<p>add-categories works!</p>
+<!-- <div class="col-md-6 offset-md-3">
+    <form [formGroup]="addForm">
+        <label>designation Categorie</label>
+        <input class="form-control" formControlName="nom_eleve"
+        [(ngModel)]="new_cate.designatioCate"
+        required minlength="3">
+        <br>
+        <label>image categorie</label>
+        <input class="form-control"  formControlName="age"
+        [(ngModel)]="new_cate.imageCate">
+        <br>
+       
+        <button (click)="save()" [disabled]="!addForm.valid" class="form-control btn-success"[routerLink]="['/category']">Save</button>
+    </form> -->
+    <form #formcate="ngForm" (ngSubmit)="addCategory(formcate.value)">
+        <input type="text"  name="designatioCate" [ngModel]>
+        <input type="text" name="imageCate" [ngModel] >
+        <button type="submit" value="submit" > submit </button>
+    </form>

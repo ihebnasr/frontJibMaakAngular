@@ -1,0 +1,37 @@
+<p>add-article works!</p>
+<div class="col-xs-12 col-sm-9 col-lg-9">
+  
+    <form [formGroup]="artForm" (ngSubmit)="addArticle()"enctype="multipart/form-data">
+        <h2 class="heading-title"  >
+  Article Form
+           
+        </h2>
+        
+        
+        <div>
+            <p class="form-row">
+                designationArt <input type="text" placeholder="designationArt" formControlName="designationArt" >
+            </p>
+            <p class="form-row">
+                image <input type="text" placeholder="image" formControlName="image" >
+            </p>
+            <p class="form-row">
+                prix <input  type="number" placeholder="prix" formControlName="prixArt" >
+            </p>
+
+            <select formControlName="categories">
+                <option></option>
+                <option *ngFor="let c of cate" value="{{c.codeCate}}">{{c.designatioCate}}</option>
+            </select><br>
+           
+            <button name="submitcreate" id="submitcreate" type="submit" class="btn-default">
+                <span>
+                  
+                    SAVE 
+                </span>
+            </button>
+            
+        </div>
+        </form>
+ 
+</div>

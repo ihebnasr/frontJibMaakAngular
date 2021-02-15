@@ -1,0 +1,47 @@
+<p>update-article works!</p>
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="arts" class="edit-form">
+      <h4>Article</h4> 
+      <form [formGroup]="artForm" (ngSubmit)="updateArticle()">
+        <div class="form-group">
+          <label for="title">designation article</label>
+          <input type="text" class="form-control" id="name" formControlName="designationArt"  name="designationArt"/>
+        </div>
+        <div class="form-group">
+          <label for="description">prixArt</label>
+          <input type="text" class="form-control" id="prixArt"  formControlName="prixArt"  name="prixArt"/>
+        </div>
+        <!-- <div class="form-group">
+            <label for="description">actif</label>
+            <input type="checkbox" class="form-control" id="actif"[(ngModel)]="arts.actif"name="actif"/>
+          </div> -->
+          <div class="form-group">
+            <label for="description">Image</label>
+            <input type="text" class="form-control" id="image"   formControlName="image" name="image"/>
+          </div>
+          <!-- <div class="form-group">
+            <label for="description">prixPromoArt</label>
+            <input type="text" class="form-control" id="prixPromoArt"[(ngModel)]="arts.prixPromoArt"name="prixPromoArt"/>
+          </div> -->
+          <div class="form-group">
+            <label for="description">Categorie</label>
+            <select formControlName="categories">
+              <option></option>
+              <option *ngFor="let c of cate" value="{{c.codeCate}}">{{c.designatioCate}}</option>
+          </select><br>
+          </div>
+  
+    
+          <button type="submit"class="badge badge-success">
+            Update
+          </button>
+      </form>
+      <button class="badge badge-danger mr-2" (click)="deleteProduct()">
+        Delete
+      </button>
+  
+      <p></p>
+    </div>
+  
+    </div>
+  

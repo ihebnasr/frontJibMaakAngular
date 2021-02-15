@@ -1,0 +1,20 @@
+<!-- <p>articles works!</p>
+<input type="text" [(ngModel)]="artFitre.designationArt" placeholder="name"> -->
+<input type="text" class="form-control" placeholder="Search..." [(ngModel)]="artFitre.designationArt">
+
+<mat-card *ngFor="let art of arts | filterBy: artFitre " style="margin-top:11px;">
+    <mat-card-header>
+        <mat-card-title>    {{ art.idart }}</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-title>    {{ art.designationArt }}</mat-card-title>
+        <mat-card-subtitle>    {{ art.image }}</mat-card-subtitle>
+
+
+    </mat-card-content>
+    <mat-card-actions> <a class="badge badge-warning" routerLink="/articles/{{ art.idart }}">Edit </a>
+ </mat-card-actions>
+</mat-card>
+<button [routerLink]="['/add_art']" class="form-control btn-success">Add New  </button>
+

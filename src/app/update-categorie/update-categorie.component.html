@@ -1,0 +1,42 @@
+<p>update-categorie works!</p>
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="categs" class="edit-form">
+      <h4>Categorie</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">designatioCate</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="categs.designatioCate" name="name"/>
+        </div>
+        <div class="form-group">
+          <label for="description">Image</label>
+          <input type="text" class="form-control" id="description"[(ngModel)]="categs.imageCate"name="description"/>
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+  
+        </div>
+      </form>
+  
+      <!-- <button class="badge badge-primary mr-2" *ngIf="categs.available" (click)="setAvailableStatus(false)">
+        Set Not Available
+      </button>
+      <button *ngIf="!categs.available" class="badge badge-primary mr-2" (click)="setAvailableStatus(true)">
+        Set Available
+      </button>
+   -->
+      <button class="badge badge-danger mr-2" (click)="deleteProduct()">
+        Delete
+      </button>
+  
+      <button type="submit"class="badge badge-success" (click)="updateProduct()">
+        Update
+      </button>
+      <p></p>
+    </div>
+  
+    <div *ngIf="!categs">
+      <br />
+      <p>This product is not accessible</p>
+    </div>
+  </div>
